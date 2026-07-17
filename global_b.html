@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>global_b</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+
+  <!----- favicon ----->
+  <link rel="shortcut icon" href="./assets/images/favicon/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon/favicon32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon/favicon16.png">
+  <link rel="manifest" href="./assets/images/favicon/site.webmanifest">
+
+  <!----- open graph ----->
+  <meta property="og:title" content="HWAVE">
+  <meta property="og:description" content="EunhyeHa's Portfolio">
+  <meta property="og:image" content="https://eunhyeha.github.io/2024Portfolio/assets/images/global/openGraph.jpg">
+  <meta property="og:url" content="https://eunhyeha.github.io/2024Portfolio/index.html">
+
+  <!----- reset ----->
+  <link rel="stylesheet" href="./assets/styles/reset.css">
+
+  <!----- font ----->
+  <link rel="stylesheet" href="./assets/styles/poppins.css">
+  <link rel="stylesheet" href="./assets/styles/pretendard.css">
+
+  <!----- style ----->
+  <link rel="stylesheet" href="./global_b.css">
+  <link rel="stylesheet" href="./assets/styles/globalVar.css">
+
+  <!----- jQuery ----->
+  <script src="./assets/Js/jquery-3.7.1.min.js"></script>
+  <script src="./assets/Js/jquery-ui.min.js"></script>
+
+  <!----- global jQuery ----->
+  <script src="./global_b.js" defer></script>
+</head>
+
+<!-- class 이름 m 주의 -->
+<body>
+  <!----- header ----->
+  <!-- frame-effect -->
+  <div class="frame-effect" id="frameEffect">
+    <video src="./assets/images/index/index-main-video.mp4" muted autoplay loop></video>  
+  </div>
+
+  <header class="allPage-header">
+    <!----- nav ----->
+    <nav class="pc-main-nav">
+      <ul class="menu-wrapper">
+
+        <!-- menu -->
+        <li class="menu">
+          <a href="#" id="menuToggle" class="flip">menu</a>
+        </li>
+
+        <!-- logo -->
+        <li class="menu-logo"><a href="./index.html"><img src="./assets/images/global/logo-b.png" alt="logo"></a></li>
+
+        <!-- right-top -->
+        <li class="menu-item">
+          <div class="menu-item1"><a href="https://github.com/EunhyeHa">GitHub</a></div>
+          <div class="menu-item2"><a href="mailto:grace9695@naver.com"><img src="./assets/images/global/icon-mail-b.png" alt="email"></a></div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!--- header hidden-toggle --->
+  <!----- menu-main ----->
+  <section class="menu-main hidden" id="menuMain">
+    <div class="menu-wrapper">
+      <div class="menu-inner1">
+        <ul class="hover-underline-menu">
+          <li class="hover-effect"><a href="./about.html">About Me</a></li>
+          <li class="hover-effect"><a href="https://github.com/EunhyeHa/2024Portfolio" target="_blank">작업일지</a></li>
+        </ul>
+      </div>
+
+      <div class="menu-inner2">
+        <ul>
+          <li>Works</li>
+          <li class="mpj1"><a href="./works/adererror.html">Adererror</a></li>
+          <li class="mpj2"><a href="./works/artbodagallery.html">ARTBODA Gallery</a></li>
+          <li class="mpj3"><a href="./works/connet.html">CONNET</a></li>
+          <li class="mpj4"><a href="./works/fifeet.html">FIFFET</a></li>
+          <li class="mpj5"><a href="./works/mercedes.html">Mercedes-Benz</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!----- menu-side ----->
+  <section class="menu-side hidden">
+    <div class="side-wrapper">
+      <div class="side-inner1">
+        <h1>Kakaotalk</h1>
+        <img src="./assets/images/global/kakaotalk.JPG" alt="kakaotalk">
+      </div>
+      <div class="side-inner2">
+        <h1>Contact Me</h1>
+        <p>grace9695@naver.com</p>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

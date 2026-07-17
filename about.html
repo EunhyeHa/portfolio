@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>About Me</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+
+  <!----- favicon ----->
+  <link rel="shortcut icon" href="./assets/images/favicon/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon/favicon32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon/favicon16.png">
+  <link rel="manifest" href="./assets/images/favicon/site.webmanifest">
+
+  <!----- open graph ----->
+  <meta property="og:title" content="HWAVE">
+  <meta property="og:description" content="EunhyeHa's Portfolio">
+  <meta property="og:image" content="https://eunhyeha.github.io/2024Portfolio/assets/images/global/openGraph.jpg">
+  <meta property="og:url" content="https://eunhyeha.github.io/2024Portfolio/index.html">
+   
+  <!----- reset ----->
+  <link rel="stylesheet" href="./assets/styles/reset.css">
+  
+  <!----- font ----->
+  <link rel="stylesheet" href="./assets/styles/pretendard.css">
+  <link rel="stylesheet" href="./assets/styles/poppins.css">
+
+  <!----- style ----->
+  <!-- z-index 꼭 확인!!!!! -->
+
+  <!-- global_b 적용 -->
+  <link rel="stylesheet" href="./global_b.css">
+  <link rel="stylesheet" href="./assets/styles/globalVar.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="./about.css">
+
+  <!----- jQuery ----->
+  <script src="./assets/Js/jquery-3.7.1.min.js"></script>
+  <script src="./assets/Js/jquery-ui.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="./global_b.js" defer></script>
+  
+  <script src="./about.js" defer></script>
+
+  <!-- gsap -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+
+</head>
+
+<body>
+  <!----- header ----->
+  <!-- frame-effect -->
+  <div class="frame-effect" id="frameEffect">
+    <video src="./assets/images/index/index-main-video.mp4" muted autoplay loop></video>
+  </div>
+
+  <header class="allPage-header">
+    <!----- nav ----->
+    <nav class="pc-main-nav">
+      <ul class="menu-wrapper">
+
+        <!-- menu -->
+        <li class="menu">
+          <a href="#" id="menuToggle" class="flip">menu</a>
+        </li>
+
+        <!-- logo -->
+        <li class="menu-logo"><a href="./index.html"><img src="./assets/images/global/logo-b.png" alt="logo"></a></li>
+
+        <!-- right-top -->
+        <li class="menu-item">
+          <div class="menu-item1"><a href="https://github.com/EunhyeHa">GitHub</a></div>
+          <div class="menu-item2"><a href="mailto:grace9695@naver.com"><img src="./assets/images/global/icon-mail-b.png" alt="email"></a></div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!--- header hidden-toggle --->
+  <!----- menu-main ----->
+  <section class="menu-main hidden" id="menuMain">
+    <div class="menu-wrapper">
+      <div class="menu-inner1">
+        <ul class="hover-underline-menu">
+          <li class="hover-effect"><a href="./about.html">About Me</a></li>
+          <li class="hover-effect"><a href="https://github.com/EunhyeHa/2024Portfolio" target="_blank">작업일지</a></li>
+        </ul>
+      </div>
+
+      <div class="menu-inner2">
+        <ul>
+          <li>Works</li>
+          <li class="mpj1"><a href="./works/adererror.html">Adererror</a></li>
+          <li class="mpj2"><a href="./works/artbodagallery.html">ARTBODA Gallery</a></li>
+          <li class="mpj3"><a href="./works/mercedes.html">Mercedes-Benz</a></li>
+          <li class="mpj4"><a href="./works/connet.html">CONNET</a></li>
+          <li class="mpj5"><a href="./works/fifeet.html">FIFFET</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!----- menu-side ----->
+  <section class="menu-side hidden">
+    <div class="side-wrapper">
+      <div class="side-inner1">
+        <h1>Kakaotalk</h1>
+        <img src="./assets/images/global/kakaotalk.JPG" alt="kakaotalk">
+      </div>
+      <div class="side-inner2">
+        <h1>Contact Me</h1>
+        <p>grace9695@naver.com</p>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <!------------------------ 여기부터 본문 내용 ------------------------>
+  <!----- about-main ----->
+  <section class="about-main">
+    <div class="main-title">
+        <h1>바다를 
+          <video src="./assets/images/about/main-title-box2.mov" autoplay muted loop></video>
+          헤엄치는 파도처럼,
+        </h1>
+
+        <h1 class="slide-wrapper">내가 만드는
+          <span class="container">
+            <img class="slide" src="./assets/images/about/main-title-box1.jpg" alt="box1">  
+            <img class="slide" src="./assets/images/about/main-title-box1-2.jpg" alt="box2">  
+            <img class="slide" src="./assets/images/about/main-title-box1-3.jpg" alt="box3">  
+            <img class="slide" src="./assets/images/about/main-title-box1-4.jpg" alt="box4">  
+            <img class="slide" src="./assets/images/about/main-title-box1-5.jpg" alt="box5">  
+            <img class="slide" src="./assets/images/about/main-title-box1-6.jpg" alt="box6">  
+            <img class="slide" src="./assets/images/about/main-title-box1-7.jpg" alt="box7">  
+          </span> 이야기
+        </h1>
+    </div>
+  </section>
+
+  <!-- gsap -->
+  <!----- about-intro ----->
+  <section class="about-intro">
+    <div class="intro-txt-wrapper">
+        <h3 class="txt-inner">Who Am I</h3>
+        <div class="txt-line"></div>
+    </div>
+
+    <div class="txt-img" id="txt-img"></div>
+        
+    <div class="txt-word">
+      <p>알고 보면</p>
+      <p>웃음이 많고</p>
+      <p>셀카는 거울로!</p>
+      <p>바다를 사랑하고</p>
+      <p>일상의 자연과</p>
+      <p>푸르른 나무를</p>
+      <p>항상 곁에 두는</p>
+      <p>다양한 모습을</p>
+      <p>가지고 있는</p>
+      <p>사람입니다.</p>
+    </div>
+  </section>
+
+  <!----- about-career ----->
+  <section class="about-career">
+    <h1>저는 커뮤니케이션디자인을 전공하고, 디자이너로 실무 경험을 쌓았습니다. 지금은 UIUX, 웹 퍼블리싱을 공부하며 다음 도약을 꿈꾸고 있습니다.</h1>
+    <div class="career-list">
+        <p>
+            <span>01</span>
+            <span>2024.02.13 - 2024.07.02</span> 
+            웹디자인 & 웹퍼블리싱 과정 수료
+            <span><img src="./assets/images/about/career-study.png" alt="study" class="img1"></span>
+        </p>
+        <p>
+            <span>02</span>
+            <span>2021.06.10 - 2022.01.24</span> 
+            동원산업 채널영업팀 디자이너 근무
+            <span><img src="./assets/images/about/career-work.png" alt="work" class="img2"></span>  
+        </p>
+        <p>
+            <span>03</span>
+            <span>2016.03.01 - 2021.08.10</span>
+            건국대학교 커뮤니케이션디자인학과 졸업
+            <span><img src="./assets/images/about/career-school2.png" alt="school" class="img3"></span>  
+        </p>
+    </div>
+    <div class="career-list-etc">
+        <p>+ 웹디자인기능사 자격증</p>
+        <p>+ 운전면허 보통 2종</p>
+    </div>
+  </section>
+
+  <!----- about-skill ----->
+  <section class="about-skill">
+    <ul class="skill-list1">
+        <li>
+            <p>웹 표준과 접근성을 고려하여 시멘틱 마크업<br>
+            Flex, Grid, Position을 이용한 레이아웃 구현<br>
+            CSS Animation을 활용한 모션 구현<br>
+            미디어 쿼리를 이용한 반응형 웹 제작<br>
+            SCSS를 활용한 스타일값</p>
+            <h1>HTML5</h1>
+            <h1>& CSS3</h1>
+        </li>
+        <li>
+            <p>ES6+ 문법<br>
+            jQuery를 이용한 DOM 제어<br>
+            비동기 통신 AJAX 활용: $ajax, fetch 이용한 Web API 사용<br>
+            동적인 이펙트 구현 : 마우스, 스크롤, 포인터 등의 이벤트<br>
+            비동기 함수 : SetTimeout, SetInterval 사용</p>
+            <h1>JavaScript</h1> 
+            <h1>& jQuery</h1>
+        </li>
+        <li>
+            <p>분산 버전 관리<br>
+            GitHub를 통해 팀 프로젝트 실시간 공유 및 협업</p>
+            <h1>Git</h1>
+            <h1>& GitHub</h1>
+        </li>
+        <li>
+            <p>
+              사용자 분석을 통한 UX기반 UI디자인<br>
+              와이어프레임, 프로토타입 제작
+            </p>
+            <h1>UIUX</h1>
+            <h1>Design</h1>
+        </li>
+    </ul>
+
+    <ul class="skill-list2">
+        <!-- BX -->
+        <li class="skill-list2-1">
+            <p>
+              핵심가치를 배경으로 사용자에게 시각적 경험 제공 <br>
+              일관성 있는 브랜드 아이덴티티 반영 <br>
+              온라인, 오프라인을 아우르는 사용자와 브랜드의 상호작용
+            </p>
+            <h1>Brand Experience</h1>
+            <h1>Design</h1>
+        </li>
+        
+        <!-- tools -->
+        <li class="skill-list2-2">
+          <div class="skill-list2-tool">
+              <p>그래픽 작업 및 주사용 프로그램
+              <span>Photoshop, Illustration, Figma, Indesign</span></p>
+              <p>사진 및 영상 작업 프로그램
+              <span>After Effect, Premiere Pro, Lightroom</span></p>
+              <p>그 외
+              <span>Adobe XD, Cinema 4D, Fontlab</span></p>
+              <h1>Tools</h1>
+          </div>
+
+          <div class="skill-list2-toolsImg">
+            <div>
+              <img src="./assets/images/about/tools/Ps.png" alt="Ps">
+              <img src="./assets/images/about/tools/Ai.png" alt="Ai">
+              <img src="./assets/images/about/tools/figma.png" alt="figma">
+              <img src="./assets/images/about/tools/Id.png" alt="id">
+            </div>
+
+            <div>
+              <img src="./assets/images/about/tools/Ae.png" alt="Ae">
+              <img src="./assets/images/about/tools/Pr.png" alt="Pr">
+              <img src="./assets/images/about/tools/Lr.png" alt="Lr">
+            </div>
+
+            <div>
+              <img src="./assets/images/about/tools/Xd.png" alt="Xd">
+              <img src="./assets/images/about/tools/C4D.png" alt="C4D">
+              <img src="./assets/images/about/tools/fontlab.png" alt="fontlab">
+            </div>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!----- about-fooer ----->
+  <section class="about-footer">
+    <p>© 2024. EunhyeHa. All Rights Reserved.</p>
+    <p>더 많은 정보가 궁금하시면 아래의 메일로 연락주세요! 1-2일 이내로 메일 확인 후 연락드리겠습니다.</p>
+
+    <div class="footer-mail">
+        <div class="mail">
+          <span>GRACE9695</span>@NAVER.COM
+          <span>GRACE9695</span>@NAVER.COM
+          <span>GRACE9695</span>@NAVER.COM
+          <span>GRACE9695</span>@NAVER.COM
+          <span>GRACE9695</span>@NAVER.COM
+          <span>GRACE9695</span>@NAVER.COM
+          <span>GRACE9695</span>@NAVER.COM
+          <span>GRACE9695</span>@NAVER.COM
+          <span>GRACE9695</span>@NAVER.COM
+          <span>GRACE9695</span>@NAVER.COM
+          <span>GRACE9695</span>@NAVER.COM
+          <span>GRACE9695</span>@NAVER.COM
+        </div>
+    </div>
+  </section>
+  
+</body>
+</html>

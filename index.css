@@ -1,0 +1,461 @@
+@charset "utf-8";
+* {
+    font-family: var(--primary-font-en);
+}
+
+/* z-index : 1,2 사용 */
+/***** index-main *****/
+.index-main {
+    height: 100vh;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition: 0.5s ease-in-out;
+}
+
+/* index-main-list */
+.index-main .list-wrapper {
+    font-size: 15px;
+    color: var(--color-w);
+    padding-left: 70px;
+
+    position: relative;
+    z-index: 2;
+}
+.index-main .list-wrapper ul {
+    display: flex;
+    flex-direction: column;
+}
+.index-main .list-wrapper ul li:not(:first-child) {
+    max-width: fit-content; /* 텍스트 길이에 맞게 */
+    align-self: flex-start;
+    height: 35px;
+    margin-top: 10px;
+    padding: 5px 18px;
+    text-align: left;
+    letter-spacing: 0.5px;
+    border: rgba(128, 128, 128, 0.1) solid 1px;
+    background-color: var(--color-lg);
+    border-radius: 30px;
+    
+    transition: 0.2s ease-in-out;
+}
+.index-main .list-wrapper ul li:hover:not(:first-child) {
+    border: #fff solid 1px;
+    background-color: transparent;
+}
+
+
+/***** index-project *****/
+/*** project 1 - Adererror ***/
+.index-project1 {
+    opacity: 0;
+    visibility: hidden;
+    background: url(./assets/images/index/index-main-pj1.jpg) no-repeat 50% / cover ;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    
+    /* list 밑으로!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+    z-index: 1;
+}
+.index-project1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.index-project1 .pj1-img img {
+    width: 750px;
+    border-radius: 10px;
+    position: absolute;
+    top: 13vh;
+    left: 50vw;
+}
+.index-project1 h1,
+.index-project1 h2,
+.index-project1 p {
+    position: absolute;
+    color: var(--color-w)
+}
+.index-project1 h1 {
+    font-weight: var(--weight-sb);
+    font-size: 75px;
+    top: 65vh;
+    left: 20vw;
+}
+.index-project1 h2 {
+    width: 150px;
+    font-size: 18px;
+    font-weight: var(--weight-md);
+    top: 25vh;
+    left: 35vw;
+}
+.index-project1 p {
+    width: 265px;
+    font-family: var(--primary-font-ko);
+    font-size: 16px;
+    font-weight: var(--weight-rg);
+    line-height: 1.4;
+    top: 73vh;
+    left: 70vw;
+}
+
+/*** project 2 - ARTBODA Gallery ***/
+.index-project2 {
+    opacity: 0;
+    visibility: hidden;
+    background: url(./assets/images/index/index-main-pj2.jpg) no-repeat 40% 60% / cover ;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    
+    /* list 밑으로!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+    z-index: 1;
+}
+.index-project2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.index-project2 .pj2-img {
+    width: 590px;
+    overflow: hidden;
+    border-radius: 10px;
+    position: absolute;
+    top: 45vh;
+    left: 18vw; 
+}
+.index-project2 .pj2-img img{
+    width: 100%;
+    height: auto;
+    transform: scale(2.2) translateY(25px) translateX(5px);
+}
+.index-project2 h1,
+.index-project2 h2,
+.index-project2 p {
+    position: absolute;
+    color: var(--color-w)
+}
+.index-project2 h1 {
+    font-weight: var(--weight-sb);
+    font-size: 75px;
+    top: 53vh;
+    left: 55vw;
+}
+.index-project2 h2 {
+    width: 150px;
+    font-size: 18px;
+    font-weight: var(--weight-md);
+    top: 70vh;
+    left: 60vw;
+}
+.index-project2 p {
+    width: 265px;
+    font-family: var(--primary-font-ko);
+    font-size: 16px;
+    font-weight: var(--weight-rg);
+    line-height: 1.4;
+    top: 25vh;
+    left: 37vw;
+}
+
+/*** project 3 - Mercedes ***/
+.index-project3 {
+    opacity: 0; 
+    visibility: hidden;
+    background: url(./assets/images/index/index-main-pj3.jpg) no-repeat 50% 35% / cover ;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    
+    /* list 밑으로!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+    z-index: 1;
+}
+.index-project3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.index-project3 .pj3-img img {
+    width: 750px;
+    border-radius: 10px;
+    position: absolute;
+    top: 13vh;
+    left: 50vw;
+}
+.index-project3 h1,
+.index-project3 h2,
+.index-project3 p {
+    position: absolute;
+    color: var(--color-w);
+}
+.index-project3 h1 {
+    font-weight: var(--weight-sb);
+    font-size: 75px;
+    line-height: 1.4;
+    top: 65vh;
+    left: 20vw;
+}
+.index-project3 h2 {
+    width: 150px;
+    font-size: 18px;
+    font-weight: var(--weight-md);
+    top: 25vh;
+    left: 35vw;
+}
+.index-project3 p {
+    width: 265px;
+    font-size: 16px;
+    font-weight: var(--weight-rg);
+    line-height: 1.4;
+    top: 73vh;
+    left: 70vw;
+}
+
+/*** project 4 - CONNET ***/
+.index-project4 {
+    opacity: 0;
+    visibility: hidden;
+    background: url(./assets/images/index/index-main-pj4.jpg) no-repeat 50% 55% / cover;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+
+    /* list 밑으로!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+    z-index: 1;
+}
+.index-project4::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.index-project4 .pj4-img {
+    width: 590px;
+    height: 380px;
+    overflow: hidden;
+    border-radius: 10px;
+    position: absolute;
+    top: 45vh;
+    left: 18vw; 
+}
+.index-project4 .pj4-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.index-project4 h1,
+.index-project4 h2,
+.index-project4 p {
+    position: absolute;
+    color: var(--color-w);
+}
+.index-project4 h1 {
+    font-weight: var(--weight-sb);
+    font-size: 75px;
+    top: 53vh;
+    left: 55vw;
+}
+.index-project4 h2 {
+    width: 150px;
+    font-size: 18px;
+    font-weight: var(--weight-md);
+    top: 70vh;
+    left: 60vw;
+}
+.index-project4 p {
+    font-family: var(--primary-font-ko);
+    width: 265px;
+    font-size: 16px;
+    font-weight: var(--weight-rg);
+    line-height: 1.4;
+    top: 25vh;
+    left: 37vw;
+}
+
+/*** project 5 - FIFEET ***/
+.index-project5 {
+    opacity: 0; 
+    visibility: hidden;
+    background: url(./assets/images/index/index-main-pj5.jpg) no-repeat 50% 33% / cover;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    
+    /* list 밑으로!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+    z-index: 1;
+}
+.index-project5::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.index-project5 .pj5-img {
+    width: 480px; height: 500px;
+    overflow: hidden;
+    border-radius: 10px;
+    position: absolute;
+    top: 40vh;
+    left: 65vw;
+}
+.index-project5 .pj5-img img {
+    width: 100%; height: auto;
+    transform: translateY(-80px);
+}
+.index-project5 h1,
+.index-project5 h2,
+.index-project5 p {
+    position: absolute;
+    color: var(--color-w);
+}
+.index-project5 h1 {
+    font-weight: var(--weight-sb);
+    font-size: 75px;
+    top: 52vh;
+    left: 25vw;
+}
+.index-project5 h2 {
+    width: 165px;
+    font-size: 18px;
+    font-weight: var(--weight-md);
+    top: 40vh;
+    left: 53vw;
+}
+.index-project5 p {
+    width: 265px;
+    font-family: var(--primary-font-ko);
+    font-size: 16px;
+    font-weight: var(--weight-rg);
+    line-height: 1.4;
+    top: 20vh;
+    left: 40vw;
+}
+
+/***** index-main-text *****/
+/*** 제목 + 텍스트 ***/
+.index-txt h1 {
+    font-size: 80px;
+    font-weight: var(--weight-sb);
+    color: var(--color-w);
+    position: absolute;
+    top: 60vh;
+    left: 32vw;
+}
+
+/*** flip animation ***/
+.index-txt .flip-space {
+    letter-spacing: 500px;
+    position: absolute;
+    top: 70vh;
+    left: 40vw;
+
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+}
+.index-txt h2 {
+    font-size: 80px;
+    font-weight: var(--weight-sb);
+    color: var(--color-w);
+    display: inline-block;
+    perspective: 500px;
+
+    position: absolute;
+    top: 65vh;
+    left: 50vw;
+}
+.flip {
+    display: inline-block;
+    position: relative;
+    width: 200px;
+    height: 40px;
+}
+
+/* class 이름 주의!!!!!!!! (step) */
+.flip .step {
+    font-weight: var(--weight-sb);
+    display: block;
+    width: 100%;
+    transition: transform 1.2s, opacity 0.3s;
+    opacity: 0;
+    transform: rotateX(90deg);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.flip .set {
+    opacity: 1;
+    transform: rotateX(0deg);
+}
+.flip .down {
+    opacity: 0;
+    transform: rotateX(-90deg);
+}
+
+.index-txt p {
+    width: 270px;
+    font-family: var(--primary-font-ko);
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--color-w);
+
+    position: absolute;
+    top: 25vh;
+    left: 60vw;
+}
+
+/*** main-video ***/
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -99999;
+}
