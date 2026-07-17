@@ -1,0 +1,638 @@
+@charset "utf-8";
+
+/* font */
+/* ko */
+@font-face {
+    font-family: 'SUIT-M';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Medium.woff2') format('woff2');
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'SUIT-SB';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-SemiBold.woff2') format('woff2');
+    font-weight: 700;
+}
+@font-face {
+    font-family: 'SUIT-B';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Bold.woff2') format('woff2');
+    font-weight: 600;
+}
+@font-face {
+    font-family: 'SUIT-EB';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+}
+
+/* en */
+@import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+body {
+    color: var(--color-b);
+    text-transform: capitalize;
+    overflow-x: hidden;
+}
+
+/***** connetmain *****/
+.connetmain .main-txtWrapper {
+    padding: 170px 70px 0;
+}
+.connetmain h1 {
+    padding-bottom: 65px;
+    font-size: 120px;
+    font-weight: var(--weight-md);
+}
+.connetmain .main-txt {
+    display: flex;
+}
+.connetmain .main-txt .txt1,
+.connetmain .main-txt .txt2,
+.connetmain .main-txt .txt3,
+.connetmain .main-txt .txt4 {
+    width: 20%;
+    font-family: var(--primary-font-ko);
+    font-weight: var(--weight-md);
+    line-height: 1.5;
+}
+.connetmain .main-txt .txt2, .txt4 {
+    margin-left: 20px;
+}
+.connetmain .main-txt .txt3 {
+    margin-left: 500px;
+}
+
+.connetmain .main-txt .txt1 p,
+.connetmain .main-txt .txt2 p,
+.connetmain .main-txt .txt3 p,
+.connetmain .main-txt .txt4 p {
+    color: var(--color-g);
+}
+
+.connetmain .main-content {
+    width: 100%;
+    height: 1000px;
+    overflow: hidden;
+    margin-top: 25px;
+
+    display: flex;
+    justify-content: space-around;
+}
+.connetmain .main-content .first {
+    width: 70%;
+    scale: 1.2;
+    transform: translateX(-1%) translateY(-3%);
+    position: relative;
+    z-index: -1;
+}
+.connetmain .main-content .second {
+    height: 80%;
+    width: 25%;
+    scale: 1.2;
+    object-fit: cover;
+    transform: translateX(-2%) translateY(5%);
+}
+
+/***** connetoverview *****/
+.connetoverview {
+    padding: 160px 70px 0;
+}
+.connetoverview .overview-title h3 {
+    padding-bottom: 50px; 
+    font-weight: var(--weight-md);
+}
+.connetoverview .overview-title h2 {
+    width: 80%;
+    font-family: var(--primary-font-ko);
+    font-size: 50px;
+    font-weight: var(--weight-md);
+    line-height: 1.4;
+}
+
+/*** highlight ***/
+.highlight {
+    padding: 0 5px;
+    position: relative;
+    color: var(--color-w);
+    display: inline-block;
+    background-image: linear-gradient(to right, #0000c5 100%, transparent 0%);
+    background-position: 0 100%;
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    transition: background-size 1.5s ease-in-out;
+}
+.animate {
+    background-size: 100% 100%;
+}
+
+
+/*** 목표, 리서치 ***/
+.connetoverview .overview-txt .txt1 {
+    padding: 130px 0 80px 340px;
+    display: flex;
+}
+.connetoverview .overview-txt .txt1 .goal img,
+.connetoverview .overview-txt .txt1 .research img {
+    padding-left: 20px;
+}
+.connetoverview .overview-txt .txt1 .goal h3,
+.connetoverview .overview-txt .txt1 .research h3 {
+    padding-bottom: 20px;
+    font-weight: var(--weight-md);
+}
+.connetoverview .overview-txt .txt1 .goal p,
+.connetoverview .overview-txt .txt1 .research p {
+    padding-left: 20px;
+    font-size: 20px;
+    line-height: var(--lineHeight-md); /* 1.8 */
+}
+
+.connetoverview .overview-txt .txt1 .goal .list {
+    margin: 12px 0 12px 0;
+    font-size: 16px;
+    color: var(--color-g);
+}
+
+/*** 작업순서 ***/
+.connetoverview .overview-txt .txt2 {
+    padding-left: 340px;
+    overflow: hidden;
+}
+.connetoverview .overview-txt .txt2 .workflow h3 {
+    padding-bottom: 20px;
+    font-weight: var(--weight-md);
+}
+.connetoverview .overview-txt .txt2 .workflow img {
+    padding-left: 20px
+}
+.connetoverview .overview-txt .txt2 .workflow .weeks {
+    padding-left: 20px;
+    display: flex;
+}
+.connetoverview .overview-txt .txt2 .workflow .weeks h4 {
+    width: 360px;
+    font-weight: var(--weight-md);
+    font-size: 20px;
+    line-height: var(--lineHeight-md);
+}
+.connetoverview .overview-txt .txt2 .workflow .weeks .w1-2 p,
+.connetoverview .overview-txt .txt2 .workflow .weeks .w3 p,
+.connetoverview .overview-txt .txt2 .workflow .weeks .w4 p,
+.connetoverview .overview-txt .txt2 .workflow .weeks .w5 p {
+    margin: 12px 0 12px 0;
+    font-size: 16px;
+    color: var(--color-g);
+}
+
+/***** connet-prototype *****/
+/*** 디자인 ***/
+.connet-prototype .design {
+    padding: 130px 70px 0 70px;
+    display: flex;
+}
+.connet-prototype .design .keyword {
+    width: 700px;
+    height: 800px;
+    padding: 200px 175px;
+    background-color: #1E2426;
+}
+.connet-prototype .design .keyword .keyword-box {
+    width: 350px;
+    height: 393px;
+    border-radius: 20px;
+    background-color: #AEBCC1;
+    font-size: 20px;
+}
+.connet-prototype .design .keyword .keyword-box h3 {
+    font-weight: var(--weight-sb);
+    padding: 80px 90px 50px 60px;
+}
+.connet-prototype .design .keyword .keyword-box p {
+    width: 200px;
+    margin: 0 60px 20px;
+    padding: 10px 0 10px 20px;
+    font-family: var(--primary-font-ko);
+    font-weight: var(--weight-md);
+    background-color: var(--color-w);
+    color: var(--color-b);
+
+    border-radius: 30px;
+}
+
+/*** 내용 ***/
+.connet-prototype .content .typeColor {
+    height: 800px;
+    margin-left: 20px;
+    background-color: #E0E0E0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* type */
+.connet-prototype .content .typeColor .typeColor-box {
+    font-size: 20px;
+    margin-left: 70px;
+    flex: 1;
+}
+.connet-prototype .content .typeColor .typeColor-box .type {
+    margin-top: 120px;
+    display: flex;
+    align-items: flex-start;
+}
+.connet-prototype .content .typeColor .typeColor-box .type h3 {
+    width: 170px;
+    font-weight: var(--weight-sb);
+}
+.connet-prototype .content .typeColor .typeColor-box .type .ko,
+.connet-prototype .content .typeColor .typeColor-box .type .en {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+.connet-prototype .content .typeColor .typeColor-box .type .en h4 {
+    padding-left: 80px;
+}
+.connet-prototype .content .typeColor .typeColor-box .type .ko h4,
+.connet-prototype .content .typeColor .typeColor-box .type .en h4 {
+    font-weight: var(--weight-md);
+    color: var(--color-g);
+    text-transform: lowercase;
+}
+.connet-prototype .content .typeColor .typeColor-box .type .ko .font,
+.connet-prototype .content .typeColor .typeColor-box .type .en .font {
+    padding-left: 40px;
+    line-height: 1.7;
+    display: flex;
+    flex-direction: column;
+}
+/* ko - SUIT */
+.connet-prototype .content .typeColor .typeColor-box .type .ko .font p:nth-child(1) {
+    font-family: 'SUIT-Medium', sans-serif;
+}
+.connet-prototype .content .typeColor .typeColor-box .type .ko .font p:nth-child(2) {
+    font-family: 'SUIT-SB', sans-serif;
+}
+.connet-prototype .content .typeColor .typeColor-box .type .ko .font p:nth-child(3) {
+    font-family: 'SUIT-B', sans-serif;
+}
+.connet-prototype .content .typeColor .typeColor-box .type .ko .font p:nth-child(4) {
+    font-family: 'SUIT-EB', sans-serif;
+}
+/* en - Montserrat */
+.connet-prototype .content .typeColor .typeColor-box .type .en .font p:nth-child(1) {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+.connet-prototype .content .typeColor .typeColor-box .type .en .font p:nth-child(2) {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+.connet-prototype .content .typeColor .typeColor-box .type .en .font p:nth-child(3) {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+.connet-prototype .content .typeColor .typeColor-box .type .en .font p:nth-child(4) {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+/* color */
+.connet-prototype .content .typeColor .color {
+    font-family: var(--primary-font-en);
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 100px;
+}
+
+/* main */
+.connet-prototype .content .typeColor .color .main {
+    font-family: var(--primary-font-ko);
+    display: flex;
+}
+.connet-prototype .content .typeColor .color h3 {
+    width: 170px;
+    font-size: 20px;
+    font-weight: var(--weight-sb);
+}
+.connet-prototype .content .typeColor .color .main div {
+    width: 130px; height: 165px;
+    padding: 110px 0 0 15px;
+    font-size: 16px;
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+}
+.connet-prototype .content .typeColor .color div:nth-of-type(1){
+    margin-left: 0;
+}
+.connet-prototype .content .typeColor .color div {
+    margin-left: 35px;
+}
+.connet-prototype .content .typeColor .color .color1 {
+    background-color: #1E2426;
+    color: #AEBCC1;
+}
+.connet-prototype .content .typeColor .color .color2 {
+    background-color: #374549;
+    color: #AEBCC1;;
+}
+.connet-prototype .content .typeColor .color .color3 {
+    background-color: #AEBCC1;
+    color: #1E2426;
+}
+.connet-prototype .content .typeColor .color .color4 {
+    background-color: var(--color-w);
+    color: #1E2426;
+}
+
+/* sub */
+.connet-prototype .content .typeColor .color .sub {
+    width: 800px;
+    height: 230px;
+
+    padding-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.connet-prototype .content .typeColor .color .sub div {
+    width: 194.75px;
+    height: 67px;
+    margin-left: 20px;
+
+    font-size: 16px;
+    border-radius: 10px;
+}
+.connet-prototype .content .typeColor .color .sub .color1,
+.connet-prototype .content .typeColor .color .sub .color4 {
+    margin-left: 135px;
+}
+.connet-prototype .content .typeColor .color .sub p img {
+    width: 100%;
+}
+.connet-prototype .content .typeColor .color .sub .color1 {
+    background-color: #54FC4F;
+}
+.connet-prototype .content .typeColor .color .sub .color1 p {
+    width: 146px;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+    padding: 15px;
+
+    background-color: #000000;
+}
+.connet-prototype .content .typeColor .color .sub .color2 {
+    background-color: #ED8ECD;
+}
+.connet-prototype .content .typeColor .color .sub .color2 p {
+    width: 146px;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+    padding: 22px 10px;
+
+    background-color: #EAE8CE;
+}
+.connet-prototype .content .typeColor .color .sub .color3 {
+    background-color: #70D8EE;
+}
+.connet-prototype .content .typeColor .color .sub .color3 p {
+    width: 146px;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+    padding: 23px 7px;
+
+    background-color: #C743B5;
+}
+.connet-prototype .content .typeColor .color .sub .color4 {
+    background-color: #C6E649;
+}
+.connet-prototype .content .typeColor .color .sub .color4 p {
+    width: 146px;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+    padding: 15px 10px;
+
+    background-color: #DA3821;
+}
+.connet-prototype .content .typeColor .color .sub .color5 {
+    background-color: #F5EB67;
+}
+.connet-prototype .content .typeColor .color .sub .color5 p {
+    width: 146px;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+    padding: 23px 10px;
+
+    background-color: #A1A099;
+}
+.connet-prototype .content .typeColor .color .sub .color6 {
+    background-color: #1934F2;
+}
+.connet-prototype .content .typeColor .color .sub .color6 p {
+    width: 146px;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+    padding: 22px 10px;
+
+    background-color: #FF7829;
+}
+
+/* 설명 */
+.connet-prototype .content .txt {
+    margin: 60px 0 0 360px;
+    flex: 1;
+}
+
+/*** 프로토타입 내용 ***/
+.connet-prototype .prototype {
+    padding: 130px 70px 0 410px;
+    display: flex;
+}
+.connet-prototype .prototype .txt1 h3 {
+    margin-bottom: 20px;
+    font-weight: var(--weight-md);
+}
+.connet-prototype .prototype .txt1 img {
+    padding-left: 20px;
+}
+.connet-prototype .prototype .txt1 p {
+    padding: 20px 0 0 10px;
+}
+.connet-prototype .prototype .txt1 p > img {
+    width: 895px;
+}
+
+.connet-prototype .prototype .txt2 h3 {
+    color: transparent;
+    margin-bottom: 20px;
+    font-weight: var(--weight-md);
+}
+.connet-prototype .prototype .txt2 > img {
+    padding-left: 20px;
+}
+.connet-prototype .prototype .txt2 p {
+    padding-left: 20px;
+    font-size: 20px;
+}
+.connet-prototype .prototype .txt2 p span img {
+    padding-left: 10px;
+    animation: float 1.5s ease-in-out infinite;
+}
+@keyframes float {
+    0%, 100% {
+        transform: translateY(5px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* 수정 필요.................. */
+/*** 리뷰 ***/
+.connet-prototype .review {
+    margin-top: 180px;
+    padding: 100px 0 0 70px;
+    display: flex;
+
+    background-color: var(--color-b);
+    color: var(--color-w);
+
+    position: relative;
+}
+.connet-prototype .review h2 {
+    font-size: 50px;
+    font-weight: var(--weight-md);
+}
+.connet-prototype .review .txt {
+    width: 90%;
+    font-size: 20px;
+    font-family: var(--primary-font-ko);
+    padding-left: 175px;
+}
+.connet-prototype .review .txt h3:first-of-type {
+    padding-top: 10px;
+}
+.connet-prototype .review .txt h3 {
+    line-height: 1.5;
+    font-weight: var(--weight-md);
+}
+.connet-prototype .review .txt p {
+    line-height: 1.5;
+}
+.connet-prototype .review .txt .last {
+    padding-bottom: 100px;
+}
+
+/* 추가 요소 */
+.connet-prototype .review .cat img {
+    width: 20%;
+    position: absolute;
+    top: -17%;
+    right: 13%;
+
+    animation: slideLeftRight 3s ease-in-out infinite;
+}
+@keyframes slideLeftRight {
+    0% {
+        transform: translateX(0); /* 시작 위치 */
+    }
+    50% {
+        transform: translateX(15px); /* 오른쪽으로 이동 */
+    }
+    100% {
+        transform: translateX(0); /* 원래 위치로 돌아옴 */
+    }
+}
+
+.connet-prototype .review .card1 img {
+    width: 25%;
+    position: absolute;
+    bottom: 20%;
+    right: -5%;
+    transform: rotate(-18deg);
+}
+.connet-prototype .review .card2 img {
+    width: 25%;
+    position: absolute;
+    bottom: -39%;
+    left: 10%;
+    transform: rotate(-10deg);
+    z-index: -1;
+}
+
+/*** 결과물 링크/파일 ***/
+.connet-prototype .document {
+    padding: 130px 0 250px 1150px;
+    font-size: 20px;
+}
+.connet-prototype .document p {
+    padding-bottom: 15px;
+}
+.connet-prototype .document p span img {
+    padding-left: 10px;
+    animation: float 1.5s ease-in-out infinite;
+}
+@keyframes float {
+    0%, 100% {
+        transform: translateY(5px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/***** next project *****/
+.next-project {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.next-project .pj-title {
+    padding-top: 300px;
+    text-align: center;
+    font-size: 150px;
+
+    position: absolute;
+    z-index: -1;
+
+    display: flex;
+    white-space: nowrap;
+    /* animation: marquee 300s linear infinite; */
+}
+/* @keyframes marquee {
+    0%   { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+} */
+
+.next-project .thumbnail a {
+    width: 600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.next-project .thumbnail a > img {
+    height: 850px;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.next-project .thumbnail p {
+    padding: 30px 0 130px 0;
+    font-size: 20px;
+}
+
+/***** back-to-top *****/
+.back-to-top { 
+    position: absolute;
+    right: 70px;
+    bottom: 50px;
+}
+.back-to-top img {
+    width: 50px;
+    transition: 0.2s ease-in-out;
+}
+.back-to-top a img:hover {
+    scale: 1.1;
+}
