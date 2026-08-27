@@ -9,6 +9,7 @@
     height: 100vh;
 
     position: relative;
+    z-index: 2;
     display: flex;
     align-items: center;
     transition: 0.5s ease-in-out;
@@ -376,6 +377,66 @@
     left: 40vw;
 }
 
+/***** fluid displacement (video + .index-txt) *****/
+.fluid-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+}
+.index-txt {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+.index-txt.is-on {
+    filter: url(#fluidDisplace);
+}
+.fluid-svg {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+.fluid-caustic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 120px;
+    height: 120px;
+    margin: -60px 0 0 -60px;
+    pointer-events: none;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle at center,
+        rgba(154, 210, 236, 0.72) 0%,
+        rgba(64, 148, 196, 0.38) 32%,
+        rgba(22, 78, 128, 0.14) 58%,
+        transparent 72%
+    );
+    mix-blend-mode: screen;
+    opacity: 0;
+    will-change: transform, opacity;
+}
+.fluid-caustic--in {
+    z-index: 0;
+    width: 120px;
+    height: 120px;
+    margin: -60px 0 0 -60px;
+    filter: blur(10px);
+    background: radial-gradient(
+        circle at center,
+        rgba(120, 188, 220, 0.4) 0%,
+        rgba(40, 110, 160, 0.18) 40%,
+        transparent 70%
+    );
+}
+
 /***** index-main-text *****/
 /*** 제목 + 텍스트 ***/
 .index-txt h1 {
@@ -385,6 +446,23 @@
     position: absolute;
     top: 60vh;
     left: 32vw;
+}
+.index-txt h1 .sway-what,
+.index-txt h1 .sway-i,
+.index-txt h1 .sway-wave {
+    display: inline-block;
+}
+.index-txt h1 .sway-what {
+    transform-origin: 50% 100%;
+    animation: textSwayA 4.8s ease-in-out infinite;
+}
+.index-txt h1 .sway-i {
+    transform-origin: 50% 100%;
+    animation: textSwayI 5.3s ease-in-out 0.35s infinite;
+}
+.index-txt h1 .sway-wave {
+    transform-origin: 50% 100%;
+    animation: textSwayW 6.1s ease-in-out 0.7s infinite;
 }
 
 /*** flip animation ***/
@@ -438,7 +516,7 @@
 }
 
 .index-txt p {
-    width: 270px;
+    width: 300px;
     font-family: var(--primary-font-ko);
     font-size: 16px;
     line-height: 1.5;
@@ -447,15 +525,44 @@
     position: absolute;
     top: 25vh;
     left: 60vw;
+    transform-origin: 70% 0%;
+    animation: textSwayC 6.2s ease-in-out infinite;
+}
+@keyframes textSwayA {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    35% { transform: translateY(-10px) rotate(0.5deg); }
+    68% { transform: translateY(7px) rotate(-0.35deg); }
+}
+@keyframes textSwayI {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    28% { transform: translateY(9px) rotate(-0.45deg); }
+    62% { transform: translateY(-11px) rotate(0.4deg); }
+}
+@keyframes textSwayW {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    40% { transform: translateY(-8px) rotate(0.3deg); }
+    74% { transform: translateY(10px) rotate(-0.5deg); }
+}
+@keyframes textSwayC {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    38% { transform: translateY(8px) rotate(-0.4deg); }
+    70% { transform: translateY(-6px) rotate(0.3deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .index-txt h1 .sway-what,
+    .index-txt h1 .sway-i,
+    .index-txt h1 .sway-wave,
+    .index-txt p {
+        animation: none;
+    }
 }
 
 /*** main-video ***/
-video {
+.fluid-layer > video {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -99999;
 }

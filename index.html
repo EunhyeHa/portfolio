@@ -180,29 +180,38 @@
   
 </section>
 
-  <!----- index-main-text ----->
-  <section class="index-txt">
-    <h1>What I Wave :</h1>
-    <h2>
-      <span id="flipper" class="flip">
-        <span class="step step0 set">Website</span>
-        <span class="step step1">Brand</span>
-        <span class="step step2">Application</span>
-        <span class="step step3">Story</span>
-        <span class="step step4">Dreams</span>
-        <span class="step step5">Flow</span>
-        <span class="step step6">Anything</span>
-        <span class="step step7">Identity</span>
-        <span class="step step8">Experience</span>
-        <span class="step step9">Interface</span>
-    </span>
-    </h2>
-    <p>바다를 헤엄치는 파도처럼, 이야기를 만드는 디자이너 & 웹퍼블리셔 하은혜입니다. 
-       저의 이야기가 담긴 프로젝트를 통해 다양한 경험을 지금 바로 만나보세요.</p>
-  </section>
-
-  <!-- main-video -->
-  <video src="./assets/images/index/index-main-video.mp4" muted autoplay loop></video>
+  <div class="fluid-layer" id="fluidLayer">
+    <svg class="fluid-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false">
+      <filter id="fluidDisplace" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB">
+        <feImage id="fluidMap" result="map" x="0" y="0" width="100%" height="100%" preserveAspectRatio="none"></feImage>
+        <feDisplacementMap id="fluidScale" in="SourceGraphic" in2="map" scale="36" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+      </filter>
+    </svg>
+    <!-- main-video -->
+    <!-- <img src="./assets/images/index/index-main-bgImg.jpg" alt=""> -->
+    <video src="./assets/images/index/index-main-video.mp4" muted autoplay loop></video>
+    <section class="index-txt">
+      <h1><span class="sway-what">What</span> <span class="sway-i">I</span> <span class="sway-wave">Wave</span> :</h1>
+      <h2>
+        <span id="flipper" class="flip">
+          <span class="step step0 set">Website</span>
+          <span class="step step1">Brand</span>
+          <span class="step step2">Application</span>
+          <span class="step step3">Story</span>
+          <span class="step step4">Dreams</span>
+          <span class="step step5">Flow</span>
+          <span class="step step6">Anything</span>
+          <span class="step step7">Identity</span>
+          <span class="step step8">Experience</span>
+          <span class="step step9">Interface</span>
+        </span>
+      </h2>
+      <p>바다를 헤엄치는 파도처럼, 이야기를 만드는 디자이너 & 웹퍼블리셔 하은혜입니다.
+         저의 이야기가 담긴 프로젝트를 통해 다양한 경험을 지금 바로 만나보세요.</p>
+      <div class="fluid-caustic fluid-caustic--in" id="fluidCausticIn" aria-hidden="true"></div>
+    </section>
+  </div>
+  <div class="fluid-caustic" id="fluidCaustic" aria-hidden="true"></div>
 
 </body>
 </html>
