@@ -1,6 +1,7 @@
 @charset "utf-8";
 
 
+
 body {
     color: var(--color-b);
     text-transform: capitalize;
@@ -318,7 +319,7 @@ body {
     width: 700px;
     height: 800px;
     padding: 200px 175px;
-    background-color: #0000c5;
+    background-color: #000038;
 }
 .ader-publishing .design .keyword .keyword-box {
     width: 350px;
@@ -338,7 +339,7 @@ body {
     font-family: var(--primaty-font-ko);
     font-weight: var(--weight-sb);
     background-color: #f3f3f3;
-    color: #0000c5;
+    color: #000038;
 
     border-radius: 30px;
 }
@@ -449,17 +450,19 @@ body {
     margin-left: 35px;
 }
 .ader-publishing .content .typeColor .color .color1 {
-    background-color: var(--color-w);
+    background-color: #000038;
+    color: var(--color-w);
 }
 .ader-publishing .content .typeColor .color .color2 {
-    background-color: #f3f3f3;
+    background-color: #0000A5;
+    color: var(--color-w);
 }
 .ader-publishing .content .typeColor .color .color3 {
-    background-color: #0000c5;
+    background-color: #555555;
     color: var(--color-w);
 }
 .ader-publishing .content .typeColor .color .color4 {
-    background-color: #000000;
+    background-color: #9E9E9E;
     color: var(--color-w);
 }
 
