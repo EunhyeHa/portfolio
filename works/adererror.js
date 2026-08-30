@@ -2,20 +2,125 @@
 document.addEventListener('DOMContentLoaded', function() {
     const target = document.querySelector('.highlight');
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                setTimeout(() => {
-                    entry.target.classList.add('animate'); // 애니메이션 클래스 추가
-                }, 300);
-                observer.unobserve(entry.target);
-            }
+    if (target) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('animate');
+                    }, 300);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.5
         });
-    }, {
-        threshold: 0.5
-    });
 
-    observer.observe(target);
+        observer.observe(target);
+    }
+});
+
+// ader-main 스크롤 — desktop only
+document.addEventListener('DOMContentLoaded', function () {
+    const main = document.querySelector('.ader-main');
+    if (!main) {
+        return;
+    }
+
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const mobile = window.matchMedia('(max-width: 768px)');
+    let ticking = false;
+
+    function clamp(n, a, b) {
+        return Math.max(a, Math.min(b, n));
+    }
+
+    function isStatic() {
+        return reduce.matches || mobile.matches;
+    }
+
+    function apply(fg, bg) {
+        main.style.setProperty('--main-fg', fg.toFixed(4));
+        main.style.setProperty('--main-bg', bg.toFixed(4));
+    }
+
+    function update() {
+        ticking = false;
+        if (isStatic()) {
+            apply(0, 0);
+            return;
+        }
+        const rect = main.getBoundingClientRect();
+        const track = Math.max(1, main.offsetHeight - window.innerHeight);
+        const p = clamp(-rect.top / track, 0, 1);
+        const fg = clamp(p * 1.2, 0, 1);
+        const bg = p * p * (3 - 2 * p);
+        apply(fg, bg);
+    }
+
+    function onScroll() {
+        if (ticking) {
+            return;
+        }
+        ticking = true;
+        requestAnimationFrame(update);
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    if (reduce.addEventListener) {
+        reduce.addEventListener('change', update);
+        mobile.addEventListener('change', update);
+    }
+    update();
+});
+
+// 첫 스크롤부터 비디오 재생
+document.addEventListener('DOMContentLoaded', function () {
+    const video = document.querySelector('.main-content video');
+    if (!video) {
+        return;
+    }
+    video.pause();
+
+    function startVideo() {
+        const play = video.play();
+        if (play && play.catch) {
+            play.catch(function () {});
+        }
+        window.removeEventListener('scroll', startVideo);
+        window.removeEventListener('wheel', startVideo);
+        window.removeEventListener('touchmove', startVideo);
+    }
+
+    window.addEventListener('scroll', startVideo, { passive: true });
+    window.addEventListener('wheel', startVideo, { passive: true });
+    window.addEventListener('touchmove', startVideo, { passive: true });
+});
+
+// Video hover circle + link (desktop)
+document.addEventListener('DOMContentLoaded', function () {
+    const link = document.querySelector('.main-video-link');
+    const cursor = document.querySelector('.main-video-cursor');
+    if (!link || !cursor) {
+        return;
+    }
+    if (window.matchMedia('(pointer: coarse)').matches) {
+        return;
+    }
+
+    function move(event) {
+        cursor.style.left = event.clientX + 'px';
+        cursor.style.top = event.clientY + 'px';
+    }
+
+    link.addEventListener('mouseenter', function () {
+        cursor.classList.add('is-on');
+    });
+    link.addEventListener('mouseleave', function () {
+        cursor.classList.remove('is-on');
+    });
+    link.addEventListener('mousemove', move);
 });
 
 

@@ -10,9 +10,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const imagePaths = {
         mpj1: "../assets/images/global/menu-pj1-img.png",
         mpj2: "../assets/images/global/menu-pj2-img.jpg",
-        mpj3: "../assets/images/global/menu-pj3-img.jpg",
+        mpj3: "../assets/images/global/menu-pj3-img.png",
         mpj4: "../assets/images/global/menu-pj4-img.jpg",
-        mpj5: "../assets/images/global/menu-pj5-img.jpg"
+        mpj5: "../assets/images/global/menu-pj5-img.jpg",
+        mpj6: "../assets/images/global/menu-pj6-img.jpg"
     };
 
     let currentImageClass = ''; // 현재 로드된 이미지 클래스

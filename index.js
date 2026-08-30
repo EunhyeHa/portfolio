@@ -338,6 +338,72 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+// project6 show = 4
+document.addEventListener("DOMContentLoaded", function() {
+    const pj6 = document.querySelector('.pj6');
+    const indexProject6 = document.querySelector('.index-project6');
+    if (!pj6 || !indexProject6) {
+        return;
+    }
+    const h1 = indexProject6.querySelector('h1');
+    const h2 = indexProject6.querySelector('h2');
+    const p = indexProject6.querySelector('p');
+
+    function showProject() {
+        indexProject6.style.opacity = '1';
+        indexProject6.style.visibility = 'visible';
+
+        h1.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        h1.style.opacity = '0';
+        h1.style.transform = 'translateX(30px)';
+
+        h2.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        h2.style.opacity = '0';
+        h2.style.transform = 'translateY(-10px)';
+
+        p.style.transition = 'opacity 0.2s ease, transform 0.2s ease';
+        p.style.opacity = '0';
+        p.style.transform = 'translateX(-10px)';
+
+        setTimeout(() => {
+            h1.style.opacity = '1';
+            h1.style.transform = 'translateX(0)';
+        }, 100);
+
+        setTimeout(() => {
+            h2.style.opacity = '1';
+            h2.style.transform = 'translateY(0)';
+        }, 100);
+
+        setTimeout(() => {
+            p.style.opacity = '1';
+            p.style.transform = 'translateY(0)';
+        }, 100);
+    }
+
+    function hideProject() {
+        indexProject6.style.opacity = '0';
+        indexProject6.style.visibility = 'hidden';
+
+        h1.style.opacity = '0';
+        h1.style.transform = 'translateX(20px)';
+
+        h2.style.opacity = '0';
+        h2.style.transform = 'translateY(-20px)';
+
+        p.style.opacity = '0';
+        p.style.transform = 'translateX(10px)';
+    }
+
+    pj6.addEventListener('mouseenter', showProject);
+    pj6.addEventListener('mouseleave', (event) => {
+        if (!indexProject6.contains(event.relatedTarget)) {
+            hideProject();
+        }
+    });
+});
+
+
 // fluid displacement — video + .index-txt (desktop / fine pointer only)
 document.addEventListener("DOMContentLoaded", function () {
     const layer = document.getElementById("fluidLayer");
@@ -391,8 +457,16 @@ document.addEventListener("DOMContentLoaded", function () {
         vx: 0,
         vy: 0,
         moving: false,
-        lightLife: 0
+        lightLife: 0,
+        ang: 0
     };
+    const hits = Array.prototype.map.call(txtEl.querySelectorAll(".wave-hit"), function (el) {
+        return { el: el, x: 0, y: 0, blur: 0 };
+    });
+    // 유체 이펙트 강도
+    const WAVE_PAD = 10;
+    const WAVE_MAX = 7;
+    const WAVE_BLUR_MAX = 1;
 
     let rafId = 0;
     let running = false;
@@ -407,6 +481,85 @@ document.addEventListener("DOMContentLoaded", function () {
             return false;
         }
         return true;
+    }
+
+    function prefersReduce() {
+        return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    }
+
+    function lerp(a, b, k) {
+        return a + (b - a) * k;
+    }
+
+    function hitContains(el, cx, cy) {
+        const boxes = [el];
+        if (el.tagName === "H2") {
+            const live = el.querySelector(".step.set");
+            if (live) {
+                boxes.push(live);
+            }
+        }
+        for (let b = 0; b < boxes.length; b += 1) {
+            const r = boxes[b].getBoundingClientRect();
+            const padY = boxes[b].classList.contains("step") ? 6 : WAVE_PAD;
+            if (cx >= r.left - WAVE_PAD && cx <= r.right + WAVE_PAD && cy >= r.top - padY && cy <= r.bottom + padY) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    function resetHits() {
+        for (let i = 0; i < hits.length; i += 1) {
+            const h = hits[i];
+            h.x = 0;
+            h.y = 0;
+            h.blur = 0;
+            h.el.style.setProperty("--wave-x", "0px");
+            h.el.style.setProperty("--wave-y", "0px");
+            h.el.style.setProperty("--wave-blur", "0px");
+        }
+    }
+
+    function syncHits(t) {
+        if (!running || prefersReduce()) {
+            resetHits();
+            return;
+        }
+        const cx = mouse.x * window.innerWidth;
+        const cy = mouse.y * window.innerHeight;
+        const speed = Math.min(MAX_SPEED, Math.sqrt(mouse.vx * mouse.vx + mouse.vy * mouse.vy));
+        const ang = speed > MIN_SPEED ? Math.atan2(mouse.vy, mouse.vx) : mouse.ang;
+        if (speed > MIN_SPEED) {
+            mouse.ang = ang;
+        }
+        const wobble = Math.sin(t * 22) * (mouse.moving ? 1 : 0.35);
+        for (let i = 0; i < hits.length; i += 1) {
+            const h = hits[i];
+            const over = hitContains(h.el, cx, cy);
+            let tx = 0;
+            let ty = 0;
+            let tb = 0;
+            if (over) {
+                const mag = mouse.moving ? Math.min(WAVE_MAX, 4 + speed * 9) : 1.4;
+                const shake = wobble * (mouse.moving ? 2.2 + speed * 3.2 : 3.4);
+                tx = Math.cos(ang) * (mag + shake);
+                ty = Math.sin(ang) * (mag + shake);
+                tb = Math.min(WAVE_BLUR_MAX, mouse.moving ? 0.45 + speed * 0.7 : 0.55);
+            }
+            const k = over ? 0.32 : 0.16;
+            h.x = lerp(h.x, tx, k);
+            h.y = lerp(h.y, ty, k);
+            h.blur = lerp(h.blur, tb, k);
+            if (!over && Math.abs(h.x) < 0.08 && Math.abs(h.y) < 0.08) {
+                h.x = 0;
+                h.y = 0;
+                h.blur = 0;
+            }
+            h.el.style.setProperty("--wave-x", h.x.toFixed(2) + "px");
+            h.el.style.setProperty("--wave-y", h.y.toFixed(2) + "px");
+            h.el.style.setProperty("--wave-blur", h.blur.toFixed(2) + "px");
+        }
     }
 
     function clearMap() {
@@ -525,6 +678,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         drawTrail(t);
         syncLight();
+        syncHits(t);
         rafId = requestAnimationFrame(tick);
     }
 
@@ -544,6 +698,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const speed = Math.min(MAX_SPEED, Math.sqrt(mouse.vx * mouse.vx + mouse.vy * mouse.vy));
         mouse.lightLife = Math.max(mouse.lightLife, Math.min(1, 0.35 + speed * 0.5));
         syncLight();
+        syncHits(performance.now() * 0.001);
 
         if (speed < MIN_SPEED) {
             if (running && !rafId) {
@@ -553,12 +708,22 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+        let overText = false;
+        const cx = nx * window.innerWidth;
+        const cy = ny * window.innerHeight;
+        for (let i = 0; i < hits.length; i += 1) {
+            if (hitContains(hits[i].el, cx, cy)) {
+                overText = true;
+                break;
+            }
+        }
+
         trail.unshift({
             x: nx,
             y: ny,
             vx: mouse.vx,
             vy: mouse.vy,
-            amp: Math.max(0.18, speed),
+            amp: Math.max(0.18, speed) * (overText ? 1.7 : 1),
             life: 1
         });
         if (trail.length > TRAIL_LEN) {
@@ -603,6 +768,7 @@ document.addEventListener("DOMContentLoaded", function () {
         trail.length = 0;
         mouse.lightLife = 0;
         txtEl.classList.remove("is-on");
+        resetHits();
         clearMap();
         pushMap();
         syncLight();

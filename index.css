@@ -111,7 +111,7 @@
     left: 70vw;
 }
 
-/*** project 2 - ARTBODA Gallery ***/
+/*** project 2 - Alchera ***/
 .index-project2 {
     opacity: 0;
     visibility: hidden;
@@ -139,6 +139,7 @@
 
 .index-project2 .pj2-img {
     width: 590px;
+    height: 380px;
     overflow: hidden;
     border-radius: 10px;
     position: absolute;
@@ -148,7 +149,7 @@
 .index-project2 .pj2-img img{
     width: 100%;
     height: auto;
-    transform: scale(2.2) translateY(25px) translateX(5px);
+    transform: scale(1.7) translateY(-10px) translateX(5px);
 }
 .index-project2 h1,
 .index-project2 h2,
@@ -179,11 +180,11 @@
     left: 37vw;
 }
 
-/*** project 3 - Mercedes ***/
+/*** project 3 - MoundMedia ***/
 .index-project3 {
     opacity: 0; 
     visibility: hidden;
-    background: url(./assets/images/index/index-main-pj3.jpg) no-repeat 50% 35% / cover ;
+    background: url(./assets/images/index/index-main-pj3.png) no-repeat 50% 50% / cover ;
 
     position: absolute;
     top: 0;
@@ -207,10 +208,12 @@
 
 .index-project3 .pj3-img img {
     width: 750px;
+    height: 500px;
     border-radius: 10px;
     position: absolute;
     top: 13vh;
     left: 50vw;
+    object-fit: cover;
 }
 .index-project3 h1,
 .index-project3 h2,
@@ -241,11 +244,11 @@
     left: 70vw;
 }
 
-/*** project 4 - CONNET ***/
+/*** project 4 - Merceds ***/
 .index-project4 {
     opacity: 0;
     visibility: hidden;
-    background: url(./assets/images/index/index-main-pj4.jpg) no-repeat 50% 55% / cover;
+    background: url(./assets/images/index/index-main-pj4.jpg) no-repeat 50% 35% / cover;
 
     position: absolute;
     top: 0;
@@ -311,7 +314,7 @@
     left: 37vw;
 }
 
-/*** project 5 - FIFEET ***/
+/*** project 5 - ARTBODA ***/
 .index-project5 {
     opacity: 0; 
     visibility: hidden;
@@ -337,16 +340,18 @@
     background-color: rgba(0, 0, 0, 0.4);
 }
 .index-project5 .pj5-img {
-    width: 480px; height: 500px;
+    width: 600px;
+    height: 350px;
     overflow: hidden;
     border-radius: 10px;
     position: absolute;
-    top: 40vh;
-    left: 65vw;
+    top: 13vh;
+    right: 5vw;
 }
 .index-project5 .pj5-img img {
-    width: 100%; height: auto;
-    transform: translateY(-80px);
+    width: 100%; 
+    height: auto;
+    transform: scale(2.2) translateY(20px) translateX(5px);
 }
 .index-project5 h1,
 .index-project5 h2,
@@ -375,6 +380,76 @@
     line-height: 1.4;
     top: 20vh;
     left: 40vw;
+}
+
+/*** project 6 - CONNET ***/
+.index-project6 {
+    opacity: 0;
+    visibility: hidden;
+    background: url(./assets/images/index/index-main-pj6.jpg) no-repeat 50% 55% / cover;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+
+    /* list 밑으로!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+    z-index: 1;
+}
+.index-project6::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.index-project6 .pj6-img {
+    width: 590px;
+    height: 380px;
+    overflow: hidden;
+    border-radius: 10px;
+    position: absolute;
+    top: 45vh;
+    left: 18vw; 
+}
+.index-project6 .pj6-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.index-project6 h1,
+.index-project6 h2,
+.index-project6 p {
+    position: absolute;
+    color: var(--color-w);
+}
+.index-project6 h1 {
+    font-weight: var(--weight-sb);
+    font-size: 75px;
+    top: 53vh;
+    left: 55vw;
+}
+.index-project6 h2 {
+    width: 150px;
+    font-size: 18px;
+    font-weight: var(--weight-md);
+    top: 70vh;
+    left: 60vw;
+}
+.index-project6 p {
+    font-family: var(--primary-font-ko);
+    width: 265px;
+    font-size: 16px;
+    font-weight: var(--weight-rg);
+    line-height: 1.4;
+    top: 25vh;
+    left: 37vw;
 }
 
 /***** fluid displacement (video + .index-txt) *****/
@@ -446,6 +521,12 @@
     position: absolute;
     top: 60vh;
     left: 32vw;
+}
+.index-txt .wave-hit {
+    display: inline-block;
+    transform: translate3d(var(--wave-x, 0px), var(--wave-y, 0px), 0);
+    filter: blur(var(--wave-blur, 0px));
+    will-change: transform, filter;
 }
 .index-txt h1 .sway-what,
 .index-txt h1 .sway-i,
@@ -525,6 +606,10 @@
     position: absolute;
     top: 25vh;
     left: 60vw;
+    display: block;
+}
+.index-txt p .sway-copy {
+    display: inline-block;
     transform-origin: 70% 0%;
     animation: textSwayC 6.2s ease-in-out infinite;
 }
@@ -552,8 +637,12 @@
     .index-txt h1 .sway-what,
     .index-txt h1 .sway-i,
     .index-txt h1 .sway-wave,
-    .index-txt p {
+    .index-txt p .sway-copy {
         animation: none;
+    }
+    .index-txt .wave-hit {
+        filter: none;
+        transform: none;
     }
 }
 
