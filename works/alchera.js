@@ -77,17 +77,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // 첫 스크롤부터 비디오 재생
 document.addEventListener('DOMContentLoaded', function () {
-    const video = document.querySelector('.main-content video');
-    if (!video) {
+    const videos = document.querySelectorAll('.main-content video');
+    if (!videos.length) {
         return;
     }
-    video.pause();
+    videos.forEach(function (video) {
+        video.pause();
+    });
 
     function startVideo() {
-        const play = video.play();
-        if (play && play.catch) {
-            play.catch(function () {});
-        }
+        videos.forEach(function (video) {
+            const play = video.play();
+            if (play && play.catch) {
+                play.catch(function () {});
+            }
+        });
         window.removeEventListener('scroll', startVideo);
         window.removeEventListener('wheel', startVideo);
         window.removeEventListener('touchmove', startVideo);

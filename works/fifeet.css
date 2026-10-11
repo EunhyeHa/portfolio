@@ -5,51 +5,165 @@ body {
     text-transform: capitalize;
 }
 
-/***** fifeetmain *****/
-.fifeetmain .main-txtWrapper {
-    padding: 170px 70px 0;
+/***** ader-main *****/
+.ader-main {
+    --main-fg: 0;
+    --main-bg: 0;
+    position: relative;
+    height: 300vh;
 }
-.fifeetmain h1 {
-    padding-bottom: 65px;
+.ader-main-pin {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    background-color: transparent;
+    z-index: 1;
+}
+.ader-main .main-txtWrapper {
+    position: relative;
+    z-index: 2;
+    height: auto;
+    padding: 350px 70px 100px;
+    color: var(--color-b);
+    background-color: var(--color-w);
+    transform: translate3d(0, calc(var(--main-fg) * -100%), 0);
+    will-change: transform;
+}
+.ader-main h1 {
     font-size: 120px;
     font-weight: var(--weight-md);
+    color: var(--color-b);
+    border-bottom: solid 1px var(--color-g);
 }
-.fifeetmain .main-txt {
+.ader-main .main-txt {
+    padding-top: 20px;
     display: flex;
 }
-.fifeetmain .main-txt .txt1,
-.fifeetmain .main-txt .txt2,
-.fifeetmain .main-txt .txt3,
-.fifeetmain .main-txt .txt4 {
+.ader-main .main-txt .txt1,
+.ader-main .main-txt .txt2,
+.ader-main .main-txt .txt3,
+.ader-main .main-txt .txt4 {
     width: 20%;
     font-family: var(--primary-font-ko);
     font-weight: var(--weight-md);
     line-height: 1.5;
 }
-.fifeetmain .main-txt .txt2, .txt4 {
+.ader-main .main-txt .txt2, .txt4 {
     margin-left: 20px;
 }
-.fifeetmain .main-txt .txt3 {
+.ader-main .main-txt .txt3 {
     margin-left: 500px;
 }
-
-.fifeetmain .main-txt .txt1 p,
-.fifeetmain .main-txt .txt2 p,
-.fifeetmain .main-txt .txt3 p,
-.fifeetmain .main-txt .txt4 p {
+.ader-main .main-txt .txt1 p,
+.ader-main .main-txt .txt2 p,
+.ader-main .main-txt .txt3 p,
+.ader-main .main-txt .txt4 p {
     color: var(--color-g);
 }
-
-.fifeetmain img {
-    width: 100%; 
-    margin-top: 25px;
-    background-color: #ddd;
-    color: var(--color-b);
+.ader-main .main-content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100vh;
+    margin-top: 0;
+    padding: 0;
+    background-color: var(--color-b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ader-main .main-content > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+@media (max-width: 768px) {
+    .ader-main {
+        height: auto;
+    }
+    .ader-main-pin {
+        position: relative;
+        height: auto;
+        min-height: 0;
+        overflow: visible;
+        display: flex;
+        flex-direction: column;
+    }
+    .ader-main .main-txtWrapper {
+        height: auto;
+        padding: 170px 70px 0;
+        transform: none;
+        will-change: auto;
+        order: 1;
+    }
+    .ader-main h1 {
+        font-size: 56px;
+        padding-bottom: 32px;
+    }
+    .ader-main .main-txt {
+        flex-wrap: wrap;
+        gap: 16px 0;
+    }
+    .ader-main .main-txt .txt1,
+    .ader-main .main-txt .txt2,
+    .ader-main .main-txt .txt3,
+    .ader-main .main-txt .txt4 {
+        width: 48%;
+    }
+    .ader-main .main-txt .txt2,
+    .ader-main .main-txt .txt4 {
+        margin-left: 0;
+    }
+    .ader-main .main-txt .txt3 {
+        margin-left: 0;
+    }
+    .ader-main .main-content {
+        position: relative;
+        top: auto;
+        left: auto;
+        height: auto;
+        margin-top: 25px;
+        padding: 0;
+        order: 2;
+    }
+    .ader-main .main-content > img {
+        width: 100%;
+        height: auto;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .ader-main {
+        height: auto;
+    }
+    .ader-main-pin {
+        position: relative;
+        height: auto;
+        min-height: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .ader-main .main-txtWrapper {
+        transform: none;
+        will-change: auto;
+        order: 1;
+    }
+    .ader-main .main-content {
+        position: relative;
+        height: auto;
+        order: 2;
+    }
 }
 
 /***** fifeetoverview *****/
 .fifeetoverview {
     padding: 160px 70px 0;
+    position: relative;
+    z-index: 3;
+    background-color: var(--color-w);
 }
 .fifeetoverview .overview-title h3 {
     padding-bottom: 50px; 
@@ -162,6 +276,11 @@ body {
 }
 
 /***** fifeet-design *****/
+.fifeet-design {
+    position: relative;
+    z-index: 3;
+    background-color: var(--color-w);
+}
 /*** title ***/
 .fifeet-design .design-title {
     padding: 160px 0 0 70px;
@@ -344,6 +463,8 @@ body {
     width: 100%;
     overflow: hidden;
     position: relative;
+    z-index: 3;
+    background-color: var(--color-w);
 }
 
 .next-project .pj-title {
