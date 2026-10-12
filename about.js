@@ -92,10 +92,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-
-
-
-
 // career-imgShowup
 let careerItems = document.querySelectorAll('.about-career .career-list p');
 
