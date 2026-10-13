@@ -20,9 +20,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// ader-main 스크롤 — desktop only
+// alchera-main 스크롤 — desktop only
 document.addEventListener('DOMContentLoaded', function () {
-    const main = document.querySelector('.ader-main');
+    const main = document.querySelector('.alchera-main');
     if (!main) {
         return;
     }
